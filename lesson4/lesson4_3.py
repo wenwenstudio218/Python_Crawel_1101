@@ -1,6 +1,6 @@
 from playwright.sync_api import sync_playwright
 import os
-from time import sleep
+# from time import sleep
 
 def main():
     with sync_playwright() as p:
@@ -26,10 +26,10 @@ def main():
         page.click("button#submit")
 
         # 等待導航完成
-        page.wait_for_load_state("networkidle") # 等待頁面完全載入
+        page.wait_for_load_state("networkidle")
 
         # 等待一下讓使用者看到結果
-        page.wait_for_timeout(2000) # 等待網路閒置
+        page.wait_for_timeout(2000)
 
         # 關閉瀏覽器
         browser.close()
